@@ -1,6 +1,6 @@
 # hookups
+Just Another Flutter Dating app...Kinda Tina Cloned Thanks to Fluttery....
 
-A new Flutter application.
 
 ## Getting Started
 
