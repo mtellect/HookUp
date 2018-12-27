@@ -8,27 +8,16 @@ Just Another Flutter Dating app UI ...Kinda Tina Cloned UI Thanks to Fluttery...
 
 ## How To Use
 
-1. Locally add fluttery into pubspec.yaml by downloading the repo from
-> - [Fluttery GITHUB](https://github.com/matthew-carroll/fluttery)
-
-Open the pubspec.yaml of fluttery and replace the enviroment to the one below
+1. Locally add fluttery from my repo into your pubspec.yaml
 
 ```
-environment:
-  sdk: ">=2.0.0-dev.28.0 <3.0.0"
-  flutter: ">=0.1.4 <2.0.0"
+fluttery:
+     git:
+       url: git://github.com/mtellect/fluttery
 ```
+2.  Run the project, it should work by now....
 
-then import into your code the normal way you know how..
-```
- fluttery:
-```
-
-2. Locate the fluttery folder in my project copy the layout_overlays.dart and replace the one located at fluttery/lib/src/layout_overlays.dart
-
-3.  Run the project, it should work by now....
-
-4. Watch the video on the Flutter Tinder Challenge by fluttery
+3. Watch the video on the Flutter Tinder Challenge by fluttery
 
     it would help you understand the basics of the swipe screens and concept behind it
 
