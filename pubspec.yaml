@@ -27,8 +27,8 @@ dependencies:
   font_awesome_flutter: ^8.2.0
   #swipable: ^0.1.0
   swipedetector: ^1.2.0
-  fluttery:
   flutter_swiper: ^1.1.4
+  fluttery_dart2: ^0.0.9
 
 dev_dependencies:
   flutter_test:
