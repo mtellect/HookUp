@@ -6,7 +6,7 @@ import 'package:hookups/scr/profile_card.dart';
 import 'package:hookups/scr/profiles.dart';
 import 'package:hookups/utils/images.dart';
 import 'round_icon_button.dart';
-import 'package:fluttery/layout.dart';
+import 'package:fluttery_dart2/layout.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 final MatchEngine matchEngine = new MatchEngine(

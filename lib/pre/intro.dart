@@ -89,7 +89,8 @@ class _IntroScreenState extends State<IntroScreen> {
   }
 
   Future<bool> onBackPressed() async {
-    return Navigator.pop(context);
+    Navigator.pop(context);
+    return true;
   }
 
   @override

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:fluttery/layout.dart';
+import 'package:fluttery_dart2/layout.dart';
 import 'package:hookups/scr/matches.dart';
 import 'package:hookups/scr/profile_card.dart';
 
@@ -46,7 +46,6 @@ class _DraggableCardState extends State<DraggableCard>
   @override
   void initState() {
     super.initState();
-    print("draggable ${widget.isDraggable}");
 
     slideBackAnimation = new AnimationController(
       duration: const Duration(milliseconds: 1000),
@@ -59,7 +58,6 @@ class _DraggableCardState extends State<DraggableCard>
               Curves.elasticOut.transform(slideBackAnimation.value),
             );
 
-            print("draggable ${widget.isDraggable}");
 
             if (null != widget.onSlideUpdate) {
               widget.onSlideUpdate(cardOffset.distance);
