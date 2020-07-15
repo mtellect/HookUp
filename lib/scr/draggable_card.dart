@@ -46,6 +46,7 @@ class _DraggableCardState extends State<DraggableCard>
   @override
   void initState() {
     super.initState();
+    print('CARD STATE');
 
     slideBackAnimation = new AnimationController(
       duration: const Duration(milliseconds: 1000),
@@ -131,19 +132,6 @@ class _DraggableCardState extends State<DraggableCard>
       }
     }
 
-//    if (oldWidget.slideRegion == null && widget.slideRegion != null) {
-//      switch (widget.slideRegion) {
-//        case SlideDirection.left:
-//          _slideLeft();
-//          break;
-//        case SlideDirection.right:
-//          _slideRight();
-//          break;
-//        case SlideDirection.up:
-//          _slideUp();
-//          break;
-//      }
-//    }
   }
 
   @override
@@ -394,77 +382,6 @@ class _Draggable1CardState extends State<DraggableCard>
     slideBackAnimation.dispose();
     super.dispose();
   }
-
-  @override
-  void didUpdateWidget(DraggableCard oldWidget) {
-    // TODO: implement didUpdateWidget
-    super.didUpdateWidget(oldWidget);
-//    if (widget.matchEngine != oldWidget.matchEngine) {
-//      oldWidget.matchEngine.removeListener(_onMatchChange);
-//      widget.matchEngine.addListener(_onMatchChange);
-//    }
-
-    if (widget.card.key != oldWidget.card.key) {
-      cardOffset = const Offset(0.0, 0.0);
-    }
-
-    if (oldWidget.slideTo == null && widget.slideTo != null) {
-      switch (widget.slideTo) {
-        case SlideDirection.left:
-          _slideLeft();
-          break;
-        case SlideDirection.right:
-          _slideRight();
-          break;
-        case SlideDirection.up:
-          _slideUp();
-          break;
-      }
-    }
-  }
-
-  Offset _chooseRandomDragStart() {
-    final cardContext = profileCardKey.currentContext;
-    final cardToLeft = (cardContext.findRenderObject() as RenderBox)
-        .localToGlobal(const Offset(0.0, 0.0));
-    final dragStartY = cardContext.size.height *
-            (new Random().nextDouble() < 0.5 ? 0.25 : 0.75) +
-        cardToLeft.dy;
-    return new Offset(cardContext.size.width / 2 + cardToLeft.dx, dragStartY);
-  }
-
-  void _slideLeft() async {
-    await Future.delayed(Duration(milliseconds: 500)).then((_) {
-      final screenWidth = context.size.width;
-      dragStart = _chooseRandomDragStart();
-      slideOutTween = new Tween(
-          begin: const Offset(0.0, 0.0),
-          end: new Offset(-2 * screenWidth, 0.0));
-      slideOutAnimation.forward(from: 0.0);
-    });
-  }
-
-  void _slideRight() async {
-    await Future.delayed(Duration(milliseconds: 500)).then((_) {
-      final screenWidth = context.size.width;
-      dragStart = _chooseRandomDragStart();
-      slideOutTween = new Tween(
-          begin: const Offset(0.0, 0.0), end: new Offset(2 * screenWidth, 0.0));
-      slideOutAnimation.forward(from: 0.0);
-    });
-  }
-
-  void _slideUp() async {
-    await Future.delayed(Duration(milliseconds: 500)).then((_) {
-      final screenHeight = context.size.height;
-      dragStart = _chooseRandomDragStart();
-      slideOutTween = new Tween(
-          begin: const Offset(0.0, 0.0),
-          end: new Offset(0.0, -2 * screenHeight));
-      slideOutAnimation.forward(from: 0.0);
-    });
-  }
-
   void _onPanStart(DragStartDetails details) {
     dragStart = details.globalPosition;
     if (slideBackAnimation.isAnimating) {

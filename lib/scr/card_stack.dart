@@ -19,7 +19,6 @@ class _CardStackState extends State<CardStack> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     widget.matchEngine.addListener(_onMatchEngineChange);
     _currentMatch = widget.matchEngine.currentMatch;
@@ -29,7 +28,6 @@ class _CardStackState extends State<CardStack> {
 
   @override
   void dispose() {
-    // TODO: implement dispose
     if (_currentMatch != null) {
       _currentMatch.removeListener(_onMatchChange);
     }
@@ -39,7 +37,6 @@ class _CardStackState extends State<CardStack> {
 
   @override
   void didUpdateWidget(CardStack oldWidget) {
-    // TODO: implement didUpdateWidget
     super.didUpdateWidget(oldWidget);
     if (widget.matchEngine != oldWidget.matchEngine) {
       oldWidget.matchEngine.removeListener(_onMatchEngineChange);
@@ -140,6 +137,7 @@ class _CardStackState extends State<CardStack> {
   Widget build(BuildContext context) {
     return new Stack(
       children: <Widget>[
+        new DraggableCard(isDraggable: false, card: _buildBackCard()),
         new DraggableCard(isDraggable: false, card: _buildBackCard()),
         new DraggableCard(
             card: _buildFrontCard(),

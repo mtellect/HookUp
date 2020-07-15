@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:hookups/scr/card_stack.dart';
-import 'package:hookups/scr/draggable_card.dart';
 import 'package:hookups/scr/matches.dart';
-import 'package:hookups/scr/profile_card.dart';
 import 'package:hookups/scr/profiles.dart';
 import 'package:hookups/utils/images.dart';
 import 'round_icon_button.dart';
-import 'package:fluttery_dart2/layout.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 final MatchEngine matchEngine = new MatchEngine(
   matches: demoProfile.map((Profile profile) {
